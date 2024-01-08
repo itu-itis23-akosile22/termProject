@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg3808"
+   inkscape:export-filename="C:\Users\user\bitmapN.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="bitN.svg">
+  <defs
+     id="defs3802" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="400"
+     inkscape:cy="477.70524"
+     inkscape:document-units="mm"
+     inkscape:current-layer="flowRoot3825"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3805">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       aria-label="N"
+       transform="matrix(2.8229655,0,0,2.0744505,-368.954,-755.1498)"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:0.10933474"
+       id="flowRoot3825">
+      <g
+         aria-label="N"
+         transform="matrix(0.76912652,0,0,1.0805514,58.386399,290.32682)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:0.01311276"
+         id="flowRoot3860"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96">
+        <path
+           d="m 113.75781,85.825146 h 7.1875 l 16.19141,19.863284 V 90.41499 q 0,-2.441406 -0.54688,-3.046875 -0.72265,-0.820313 -2.28515,-0.820313 h -0.91797 v -0.722656 h 9.21875 v 0.722656 h -0.9375 q -1.67969,0 -2.38281,1.015625 -0.42969,0.625 -0.42969,2.851563 v 22.32422 h -0.70313 L 120.69141,91.411084 v 16.308596 q 0,2.4414 0.52734,3.04687 0.74219,0.82031 2.28516,0.82031 h 0.9375 v 0.72266 h -9.21875 v -0.72266 h 0.91797 q 1.69921,0 2.40234,-1.01562 0.42969,-0.625 0.42969,-2.85156 V 89.301709 q -1.15235,-1.347657 -1.75782,-1.777344 -0.58593,-0.429688 -1.73828,-0.800781 -0.5664,-0.175782 -1.71875,-0.175782 z"
+           style="stroke-width:0.01311276;fill:#00ffff"
+           id="path3868"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3852"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:'Times New Roman';font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Times New Roman, ';font-stretch:normal;font-variant:normal;"><flowRegion
+         id="flowRegion3854"
+         style="-inkscape-font-specification:'Times New Roman, ';font-family:'Times New Roman';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;"><rect
+           id="rect3856"
+           width="236.729"
+           height="228.01599"
+           x="567.71149"
+           y="-1924.9937"
+           style="-inkscape-font-specification:'Times New Roman, ';font-family:'Times New Roman';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></flowRegion><flowPara
+         id="flowPara3858"></flowPara></flowRoot>  </g>
+</svg>
