@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #showScore {
+    margin-bottom: 20px;
+  }
+  
+  #game {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .card {
+    perspective: 1000px;
+    display: inline-block;
+    margin: 10px; /* Adjust spacing between cards */
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s; /* Smooth flipping transition */
+  }
+  
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    background-color: black;
+  }
+  
+  .vec-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  /* Additional styles for initial display of images before flipping */
+.card-inner.initial {
+    animation: initialFlip 2s forwards;
+  }
+  
+  @keyframes initialFlip {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(180deg);
+    }
+  }
+  
+  /* Define flipped state */
+  .card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+    </style>
+</head>
+<body>
+    <h1>Memory Game</h1>
+    <div id="showScore">
+        <p>Score: <span id="score">0</span></p>
+        <button id="startButton">Start Game</button>
+        <button id="restartButton" style="display: none;"> Restart </button>
+    </div>
+    
+    <div id="game">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="ProjectImages/bitD.svg" alt="D" class="vec-img">
+                </div>
+                <div class="card-back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="ProjectImages/bitA.svg" alt="A" class="vec-img">
+                </div>
+                <div class="card-back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="ProjectImages/bitN.svg" alt="N" class="vec-img">
+                </div>
+                <div class="card-back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="ProjectImages/bitI.svg" alt="I" class="vec-img">
+                </div>
+                <div class="card-back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="ProjectImages/bitE.svg" alt="E" class="vec-img">
+                </div>
+                <div class="card-back"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const cards = document.querySelectorAll('.card');
+const startButton = document.getElementById('startButton');
+const restartButton = document.getElementById('restartButton');
+//const sequence = ['D', 'A', 'N', 'I', 'E'];
+
+const scoreDisplay = document.getElementById('score');
+let canClick = false;
+let playerSequence = [];
+let score = 0;
+
+
+function flipCard(cardElement) {
+  
+  const cardInner = cardElement.querySelector('.card-inner');
+  
+  //if (!canClick || cardInner.classList.contains('flipped')) return;
+  
+   cardInner.classList.remove('flipped');
+   const selectedImage = cardElement.querySelector('.vec-img').src;
+    playerSequence.push(selectedImage);
+    checkSequence(selectedImage);
+  // Additional logic for checking the sequence will be added later
+  
+  enableClick('.card-inner');
+  canClick = true;
+  
+  }
+  function incrementScore() {
+  score += 20; // Increment the score by 20 for a correct sequence
+  updateScore(); // Update the displayed score
+}
+
+function updateScore() {
+  const scoreDisplay = document.getElementById('score');
+  scoreDisplay.textContent = score;
+}
+
+function checkSequence() {
+  const desiredSequence = [
+    "/ProjectImages/bitD.svg",
+    "/ProjectImages/bitA.svg",
+    "/ProjectImages/bitN.svg",
+    "/ProjectImages/bitI.svg",
+    "/ProjectImages/bitE.svg"
+  ];
+
+  for (let i = 0; i < playerSequence.length; i++) {
+    // Check if the selected image matches the corresponding image in the desired sequence
+    if (playerSequence[i] !== desiredSequence[i]) {
+      endGame(); // End the game for an incorrect choice
+      return; // Exit the loop early if an incorrect choice is made
+    }
+  }
+
+  // All choices were correct, so increment score for each correct choice
+  incrementScore();
+  updateScore();
+}
+
+
+
+
+
+function endGame() {
+  alert("Game Over! Wrong sequence chosen.");
+  // You can add more actions to perform when the game ends
+}
+
+ function startGame() {
+
+  shuffleCards();
+   
+  cards.forEach(card => {
+    card.querySelector('.card-inner').classList.remove('flipped');
+    card.addEventListener('click', () => {
+      flipCard();
+    });
+  });
+  
+  setTimeout(() => {
+    flipAllCardsToBack();
+    //enableClick('.card-inner'); // Enable clicking after flipping
+    //canClick = true; // Enable clicking after 2 seconds
+  }, 2000);
+  //enableClick('.card-inner');
+  //canClick = true;
+}
+
+function shuffleCards() {
+  cards.forEach(card => {
+    card.style.order = Math.floor(Math.random() * 10);
+  });
+}
+
+function flipAllCardsToBack() {
+  cards.forEach(card => {
+    card.querySelector('.card-inner').classList.add('flipped');
+  });
+
+  setTimeout(() => {
+    cards.forEach(card => {
+      card.querySelector('.card-inner').classList.add('flipped'); 
+    });
+    //canClick = true; // Enable clicking immediately after flipping
+  }, 2000);
+}
+
+startButton.addEventListener('click', () => {
+  startGame();
+  startButton.style.display = 'none';
+  restartButton.style.display = 'block';
+});
+
+restartButton.addEventListener('click', () => {
+  startGame(); // Restart the game similar to startButton click
+});
+
+//cards.forEach(card => {
+  //card.addEventListener('click', () => {
+    //flipCard(card);
+  //});
+//});
+
+    </script>
+</body>
+</html>
+
